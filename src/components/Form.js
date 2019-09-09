@@ -7,6 +7,7 @@ const Form = props => (
         <label htmlFor="searchString" className="visuallyHidden">Search for recipes</label>
         <input type="text" name="searchString" className="searchBar" id="searchString"/>
         <button className="searchButton">search</button>
+        
     </form>   
 );
 

@@ -25,6 +25,10 @@ class App extends Component {
 
   }
 
+  refreshPage = () => {
+    window.location.reload(false);
+  } 
+
   checkString = () => {
     if(this.state.more === false){
       return(
@@ -63,6 +67,8 @@ class App extends Component {
                 </div>
                   <a className="linkButton" href={item.recipe.url}>See recipe</a>
                   <a href="#top" className="topButton">go to top</a>
+                  <a href="" onClick={this.refreshPage} className="searchButton">refresh search</a>
+                  
             </div>
           </div>
           );

@@ -1,6 +1,4 @@
-------------------------==========================================================--------------------------
-===============================Super important stuff to read for project grader/s===========================
-============================================================================================================
+==Super important stuff to read for project grader/s==
 
 Hello! I had earlier pushed my project on this repository 
 

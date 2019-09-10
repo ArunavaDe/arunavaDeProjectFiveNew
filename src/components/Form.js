@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-
+// search form component JSX markup below
 const Form = props => (
     <form onSubmit={props.getRecipe} className="searchForm">
         <label htmlFor="searchString" className="visuallyHidden">Search for recipes</label>

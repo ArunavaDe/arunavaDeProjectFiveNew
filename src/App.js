@@ -3,9 +3,14 @@ import './App.css';
 import Form from './components/Form';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
+// importing react, Component, css link  and smooth scroll plugin from respective packages
+
+
 const apiKey = 'd42b866f825168ee78404d7ae0353e5d';
 const apiId = '328c4500';
 
+// setting ID and Key value for api
+// API used is from Edamam.com. Documentation can be foud here https://developer.edamam.com/edamam-docs-recipe-api
 
 class App extends Component {
 
@@ -13,6 +18,8 @@ class App extends Component {
     recipeArray: [],
     more: null,
   }
+
+  // setting state of array that receives response from API call and another element 'More' from the response which is used in error handling
 
   getRecipe = async (event) =>{
     const searchString = event.target.elements.searchString.value;
@@ -26,14 +33,19 @@ class App extends Component {
 
   }
 
+  // defining a fucntion to call and receive response from API using fetch and async, await
+
   refreshPage = () => {
     window.location.reload(false);
   } 
 
+  // defining fucntion to refresh page on link click
+
   checkString = () => {
     if(this.state.more === false){
       return(
-        <h2 className="statusText">nothing found</h2>
+      
+        <h2 className="statusText">found nothing matching that description.</h2>
       )
     } else if (this.state.more === true){
       return (
@@ -42,17 +54,22 @@ class App extends Component {
     }
   }
 
+  //error handling function that allows to check if returned array is empty and show user a text accordingly
 
-
+  //DOM manipulation follows from here. JSX below. 
   render() {
     return (
       <div className="App wrapper">
 
         <h1 className="headLine" id="top">what can i cook today?</h1>
         <Form getRecipe={this.getRecipe}/>
+        {/* component linked here */}
 
-        {this.checkString()}
+        {this.checkString()} 
+        {/* checking search string received from user  */}
+        
   
+  {/* mapping the response array to display results on Document begins below */}
         { this.state.recipeArray.map((item) => {
           return (
             <div className="display">
@@ -60,7 +77,7 @@ class App extends Component {
               <div className="resultsDisplay">
 
                 <h3>{item.recipe.label}</h3>
-                <p>Calories: {item.recipe.calories} </p>
+                <p>Calories: {Math.round(item.recipe.calories)} </p>
 
                 <div className="flexContainer">
                     <img src={item.recipe.image} alt={item.recipe.label}/>
@@ -72,7 +89,7 @@ class App extends Component {
 
                   <a className="linkButton" href={item.recipe.url}>See recipe</a>
                   <AnchorLink href="#top" className="topButton">to top</AnchorLink>
-                  {/* <a href="" onClick={this.refreshPage} className="searchButton">refresh search</a> */}
+                  {/* using smooth scroll plugin here */}
                   <AnchorLink href="#top" onClick={this.refreshPage} className="searchButton">refresh search</AnchorLink>
                   
               </div>

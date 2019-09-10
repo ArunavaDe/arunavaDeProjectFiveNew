@@ -95,7 +95,6 @@ html {
   padding: 3rem 10rem;
 }
 
-
 /* main head for individual search result */
 .resultsDisplay h3 {
   text-align: center;
@@ -199,6 +198,7 @@ a.topButton:focus {
   text-transform: capitalize;
   
 }
+
 
 /* media queries here */
 

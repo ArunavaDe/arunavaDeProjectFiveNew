@@ -3,6 +3,7 @@ import './App.css';
 import Form from './components/Form';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
+
 // importing react, Component, css link  and smooth scroll plugin from respective packages
 
 
@@ -17,6 +18,7 @@ class App extends Component {
   state = {
     recipeArray: [],
     more: null,
+
   }
 
   // setting state of array that receives response from API call and another element 'More' from the response which is used in error handling
@@ -45,7 +47,10 @@ class App extends Component {
     if(this.state.more === false){
       return(
       
-        <h2 className="statusText">found nothing matching that description.</h2>
+        <div className="errorHandle">
+          <h2 className="statusText">we found nothing matching that description.</h2>
+          <AnchorLink href="#top" onClick={this.refreshPage} className="topButton">refresh search</AnchorLink>
+        </div>
       )
     } else if (this.state.more === true){
       return (
@@ -61,8 +66,10 @@ class App extends Component {
     return (
       <div className="App wrapper">
 
-        <h1 className="headLine" id="top">what can i cook today?</h1>
-        <Form getRecipe={this.getRecipe}/>
+        <div className="displayForm">
+          <h1 className="headLine" id="top">what can i cook today?</h1>
+          <Form getRecipe={this.getRecipe}/>
+        </div>
         {/* component linked here */}
 
         {this.checkString()} 
@@ -90,9 +97,10 @@ class App extends Component {
                   <a className="linkButton" href={item.recipe.url}>See recipe</a>
                   <AnchorLink href="#top" className="topButton">to top</AnchorLink>
                   {/* using smooth scroll plugin here */}
-                  <AnchorLink href="#top" onClick={this.refreshPage} className="searchButton">refresh search</AnchorLink>
+                  <AnchorLink href="#top" onClick={this.refreshPage} className="topButton">refresh search</AnchorLink>
                   
               </div>
+              
             </div>
           );
         })}

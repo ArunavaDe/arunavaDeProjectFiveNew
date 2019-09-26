@@ -17,7 +17,7 @@ class App extends Component {
 
   state = {
     recipeArray: [],
-    more: null,
+    count: null,
 
   }
 
@@ -31,8 +31,8 @@ class App extends Component {
 
     const response = await apiCall.json();
     this.setState({recipeArray: response.hits});
-    this.setState({more: response.more});
-
+    this.setState({count: response.count});
+    
   }
 
   // defining a fucntion to call and receive response from API using fetch and async, await
@@ -44,7 +44,7 @@ class App extends Component {
   // defining fucntion to refresh page on link click
 
   checkString = () => {
-    if(this.state.more === false){
+    if(this.state.count === 0){
       return(
       
         <div className="errorHandle">
@@ -52,9 +52,11 @@ class App extends Component {
           <AnchorLink href="#top" onClick={this.refreshPage} className="topButton">refresh search</AnchorLink>
         </div>
       )
-    } else if (this.state.more === true){
+    } else if (this.state.count > 0){
       return (
-        <h2 className="statusText">your results</h2>
+        <div className="errorHandle">
+          <h2 className="statusText">your results</h2>
+        </div>
       )
     }
   }

@@ -38,7 +38,7 @@ body {
 .displayForm {
   background: #181307;
   padding: 2rem;
-  border-radius: 4rem ;
+  border-radius: 1rem ;
   margin-top: 2rem;
 }
 
@@ -133,8 +133,8 @@ input:focus + .formLabel, input:valid + .formLabel {
 .resultsDisplay {
   background: white;
   border: 0.1rem solid black;
-  border-radius: 2rem;
-  margin: 2rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
   padding: 3rem 10rem;
 }
 
@@ -247,7 +247,7 @@ a.topButton:focus {
 .errorHandle {
   background: #181307;
   padding: 2rem;
-  border-radius: 4rem ;
+  border-radius: 1rem ;
   margin-top: 2rem;
 }
 

@@ -1,23 +1,3 @@
-============================Super important stuff to read for project grader/s=========================================
-
-Hello! I had earlier pushed my project on this repository 
-
-https://github.com/ArunavaDe/arunavaDeProjectFive
-
-
-However, I had initially erroneously named it 'projectFive' instead of the  naming convention that is to be followed for projects. 
-I am so sorry for that! In any case, in the presence of one of our instructors, I tried to rename the repo. while renaming was successful, the deployment wasn't. 
-This led me to download the contents of this repo and create a new one 
-
-https://github.com/ArunavaDe/arunavaDeProjectFiveNew
-
-
-this is what I have submitted. My earnest request to the grader/s is to see both repos for a full commit history. Once again, I apologize for the sitaution which is entirely my oversight. 
-
-Thank you so much for taking the time to read this. Hope you have a wonderful day ahead! 
-
-Arun
-
 
 
 
